@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './HomePage.module.css';
 import AboutPage from '../About/AboutPage';
+import ContactPage from '../Contact/ContactPage';
 
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -53,9 +54,9 @@ const Portfolio = () => {
             </div>
 
             <div className={styles.buttonGroup}>
-              <button className={styles.btnPrimary}>
+              <a href="#contact" className={styles.btnPrimary}>
                 Get In Touch
-              </button>
+              </a>
               <button className={styles.btnSecondary}>
                 View Resume
               </button>
@@ -165,6 +166,9 @@ const Portfolio = () => {
 
       {/* About Section */}
       <AboutPage />
+
+      {/* Contact Section */}
+      <ContactPage />
     </div>
   );
 };

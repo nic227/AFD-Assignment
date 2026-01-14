@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/Home/HomePage';
 import ProjectsPage from '../pages/ProjectsPage';
-import ContactPage from '../pages/ContactPage';
+import ContactPage from '../pages/Contact/ContactPage';
 
 function AppRoutes() {
   return (
