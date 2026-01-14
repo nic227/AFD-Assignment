@@ -8,7 +8,7 @@
   font-family: sans-serif;
   overflow: auto;
   position: relative;
-  padding-top: 130px;
+  padding-top: 80px;
 }
 
 /* Background Animation */
@@ -73,11 +73,12 @@
   z-index: 10;
   padding-left: 32px;
   padding-right: 32px;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
+  scroll-margin-top: 100px;
 }
 
 .heroGrid {
@@ -343,8 +344,8 @@
   z-index: 10;
   padding-left: 32px;
   padding-right: 32px;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 24px;
+  padding-bottom: 43px;
   margin-top: 0;
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
   border-top: 1px solid rgba(249, 115, 22, 0.1);

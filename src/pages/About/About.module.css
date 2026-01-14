@@ -2,11 +2,12 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 3rem 2rem;
+  scroll-margin-top: 85px;
 }
 
 .aboutTitle {
   font-size: 3.75rem;
-  font-weight: bold;
+  font-weight: 900;
   margin-bottom: 3rem;
   text-align: center;
   color: white;

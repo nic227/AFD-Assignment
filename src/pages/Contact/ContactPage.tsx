@@ -107,7 +107,7 @@ export default function Contact() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Tell me about your project or inquiry..."
+            placeholder="Send me a message..."
             className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
           />
           {errors.message && <span className={styles.error}>{errors.message}</span>}
