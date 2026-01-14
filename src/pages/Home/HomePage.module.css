@@ -6,8 +6,9 @@
   background-color: #0C0E25;
   color: white;
   font-family: sans-serif;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
+  padding-top: 130px;
 }
 
 /* Background Animation */
@@ -21,8 +22,11 @@
 
 /* Navigation */
 .nav {
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,9 +34,14 @@
   padding-right: 32px;
   padding-top: 32px;
   padding-bottom: 32px;
+  background-color: #0C0E25;
+  width: 100%;
+  box-sizing: border-box;
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navBrand {
@@ -110,15 +119,15 @@
 
 .introLine {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .orangeLine {
   width: 4px;
-  height: 32px;
   background: linear-gradient(to bottom, #f97316, #fb923c);
+  flex-shrink: 0;
 }
 
 .introText {

@@ -1,0 +1,131 @@
+.aboutSection {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.aboutTitle {
+  font-size: 3.75rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.aboutContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.aboutText {
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 4rem;
+  text-align: justify;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  width: 280px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+}
+
+.statItem:hover {
+  transform: translateY(-10px);
+  border-color: #f97316;
+  box-shadow: 0 10px 40px rgba(249, 115, 22, 0.4);
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.statPlus {
+  color: #f97316;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 0.75rem;
+}
+
+.progressBar {
+  width: 80%;
+  height: 4px;
+  background-color: #334155;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #f97316;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutTitle {
+    font-size: 2.5rem;
+  }
+
+  .aboutText {
+    font-size: 0.9rem;
+  }
+
+  .statItem {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .statNumber {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .aboutSection {
+    padding: 2rem 1rem;
+  }
+
+  .aboutTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .stats {
+    gap: 1.5rem;
+  }
+}

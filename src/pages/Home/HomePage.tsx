@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './HomePage.module.css';
+import AboutPage from '../About/AboutPage';
 
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -34,7 +35,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} id="home">
         <div className={styles.heroGrid}>
           {/* Left Content */}
           <div className={styles.heroContent}>
@@ -161,6 +162,9 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* About Section */}
+      <AboutPage />
     </div>
   );
 };
