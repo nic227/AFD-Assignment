@@ -165,3 +165,61 @@
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .contactSection {
+    padding-top: 100px;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .contactSection {
+    padding-top: 90px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .subheading {
+    font-size: 0.9375rem;
+  }
+
+  .form {
+    gap: 1.5rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.75rem;
+    font-size: 0.9375rem;
+  }
+
+  .button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}

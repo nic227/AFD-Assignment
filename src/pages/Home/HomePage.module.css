@@ -50,7 +50,7 @@
   z-index: 10;
   padding-left: 32px;
   padding-right: 32px;
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 16px;
   max-width: 80rem;
   margin-left: auto;
@@ -360,9 +360,9 @@
   z-index: 10;
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-top: -20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -28px; /* shift up a bit more */
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
   border-top: 1px solid rgba(249, 115, 22, 0.1);
   border-bottom: 1px solid rgba(249, 115, 22, 0.1);
@@ -475,6 +475,192 @@
   }
   50% {
     opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 100px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .circleWrapper {
+    width: 320px;
+    height: 320px;
+  }
+
+  .circleMain {
+    width: 240px;
+    height: 240px;
+  }
+
+  .outerRing {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ngCircle {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 90px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .heroContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .introLine {
+    justify-content: center;
+  }
+
+  .introText {
+    font-size: 1.125rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .buttonGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .circleWrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .circleMain {
+    width: 200px;
+    height: 200px;
+  }
+
+  .outerRing {
+    width: 200px;
+    height: 200px;
+  }
+
+  .ngCircle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .floatingEl {
+    display: none;
+  }
+
+  .techCard {
+    min-width: 140px;
+    padding: 20px 24px;
+  }
+
+  .techIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .techIconImage {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 8px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .introText {
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .orangeLine {
+    width: 3px;
+    height: 24px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .circleWrapper {
+    width: 240px;
+    height: 240px;
+  }
+
+  .circleMain {
+    width: 180px;
+    height: 180px;
+  }
+
+  .outerRing {
+    width: 180px;
+    height: 180px;
+  }
+
+  .ngCircle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .techCard {
+    min-width: 120px;
+    padding: 16px 20px;
+  }
+
+  .techIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .techIconImage {
+    width: 24px;
+    height: 24px;
+  }
+
+  .techName {
+    font-size: 0.75rem;
   }
 }
 

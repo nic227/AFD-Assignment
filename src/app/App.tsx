@@ -1,13 +1,13 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, lazy, Suspense } from 'react';
 import Navbar from '../components/Navbar/Navbar';
-import HomePage from '../pages/Home/HomePage';
-import AboutPage from '../pages/About/AboutPage';
 import Footer from '../components/Footer/Footer';
 import { LoadingSpinner } from '../components/LoadingSpinner/LoadingSpinner';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
-// Lazy load route components
+// Lazy load all route components
+const HomePage = lazy(() => import('../pages/Home/HomePage'));
+const AboutPage = lazy(() => import('../pages/About/AboutPage'));
 const ProjectsPage = lazy(() => import('../pages/Projects/ProjectsPage'));
 const ContactPage = lazy(() => import('../pages/Contact/ContactPage'));
 const ProjectDetailsPage = lazy(() => import('../pages/Projects/ProjectDetailsPage'));

@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 1rem;
 }
 
 .content {
@@ -21,6 +22,7 @@
 
 .loadingText {
   margin-top: 1rem;
+  font-size: 1rem;
 }
 
 @keyframes spin {
@@ -29,5 +31,18 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .spinner {
+    width: 32px;
+    height: 32px;
+    border-width: 3px;
+  }
+
+  .loadingText {
+    font-size: 0.9rem;
   }
 }

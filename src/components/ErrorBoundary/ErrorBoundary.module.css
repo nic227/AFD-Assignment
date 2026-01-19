@@ -19,3 +19,23 @@
   opacity: 0.9;
   transform: scale(1.05);
 }
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .errorContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .errorContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .errorContainer p {
+    font-size: 0.9rem;
+  }
+
+  .errorButton {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

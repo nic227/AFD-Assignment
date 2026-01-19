@@ -1,5 +1,7 @@
+
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { fetchProjects } from '../thunks';
+import projectsData from '../../data/projects.json';
 
 export interface Project {
   id: number;
@@ -19,32 +21,7 @@ export interface ProjectsState {
 }
 
 const initialState: ProjectsState = {
-  projects: [
-    {
-      id: 1,
-      title: 'Budget Buddy',
-      tech: 'REACT',
-      image: '/src/assets/images/budget-buddy.png',
-      description: 'A budgeting application for financial management',
-      link: 'https://budget-buddy-project-deploy.vercel.app/',
-    },
-    {
-      id: 2,
-      title: 'Ascension Forgotten',
-      tech: 'REACT',
-      image: '/src/assets/images/ascension-of-the-forgotten.png',
-      description: 'An interactive gaming experience',
-      link: 'https://ascension-project-vercel-deploy.vercel.app/',
-    },
-    {
-      id: 3,
-      title: 'Personal Portfolio',
-      tech: 'NEXT.JS',
-      image: '/src/assets/images/animated-card.png',
-      description: 'A modern portfolio website',
-      link: 'https://anaimated-card-project-deploy.vercel.app/',
-    },
-  ],
+  projects: projectsData as Project[],
   selectedProject: null,
   activeFilter: 'ALL',
   loading: false,

@@ -62,6 +62,14 @@
 .navLink:hover {
   color: #f97316;
 }
+
+[data-theme='light'] .navLink {
+  color: #f97316;
+}
+
+[data-theme='light'] .navLink:hover {
+  color: #2d2d2d;
+}
 .themeToggleSwitch {
   position: relative;
   display: inline-flex;
@@ -102,4 +110,66 @@
 .dark .thumb {
   transform: translateX(24px);
   background: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .navList {
+    gap: 32px;
+  }
+
+  .navLink {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navContainer {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .navList {
+    gap: 24px;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navBrand {
+    order: 1;
+  }
+
+  .themeToggleSwitch {
+    order: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .navList {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 0.75rem;
+  }
+
+  .navBrand {
+    font-size: 0.8125rem;
+  }
 }

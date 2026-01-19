@@ -34,10 +34,20 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Keyboard focus styles for accessibility */
