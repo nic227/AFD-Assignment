@@ -1,22 +1,21 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useAppSelector } from '../../store/hooks';
 
 const ProjectDetailsPage = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const navigate = useNavigate();
+  const projects = useAppSelector((state) => state.projects.projects);
 
   useEffect(() => {
-    const projectUrls: { [key: string]: string } = {
-      '1': 'https://budget-buddy-project-deploy.vercel.app/',
-      '2': 'https://ascension-project-vercel-deploy.vercel.app/',
-      '3': 'https://anaimated-card-project-deploy.vercel.app/',
-    };
-
-    if (projectId && projectUrls[projectId]) {
-      window.open(projectUrls[projectId], '_blank');
+    if (projectId) {
+      const project = projects.find((p) => p.id === parseInt(projectId, 10));
+      if (project?.link) {
+        window.open(project.link, '_blank');
+      }
       navigate('/projects');
     }
-  }, [projectId, navigate]);
+  }, [projectId, projects, navigate]);
 
   return <div>Opening project...</div>;
 };

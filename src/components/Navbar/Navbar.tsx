@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useCallback, memo } from 'react';
 import { useTheme } from '../../context/useTheme';
 import styles from './Navbar.module.css';
 
-export default function Navbar() {
+const Navbar = memo(() => {
   const { theme, toggleTheme } = useTheme();
+  
+  const handleToggleTheme = useCallback(() => {
+    toggleTheme();
+  }, [toggleTheme]);
 
   return (
     <nav className={styles.navbar}>
@@ -34,9 +39,10 @@ export default function Navbar() {
           </li>
           <li className={styles.navItem}>
             <button
-              onClick={toggleTheme}
+              onClick={handleToggleTheme}
               className={`${styles.themeToggleSwitch} ${theme === 'dark' ? styles.dark : ''}`}
-              aria-label="Toggle theme"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              aria-pressed={theme === 'dark'}
               title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
               <span className={styles.thumb} />
@@ -46,4 +52,7 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+});
+
+Navbar.displayName = 'Navbar';
+export default Navbar;

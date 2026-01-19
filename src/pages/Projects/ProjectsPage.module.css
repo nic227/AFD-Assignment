@@ -127,7 +127,7 @@
 }
 
 .projectFooter {
-  background-color: #111827;
+  background-color: #f97316;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -137,11 +137,11 @@
 }
 
 [data-theme='light'] .projectFooter {
-  background-color: #ffc080;
+  background-color: #ffd9b3;
 }
 
 .projectCard:hover .projectFooter {
-  background-color: #1f2937;
+  background-color: #fb923c;
   box-shadow: none;
 }
 
@@ -170,8 +170,8 @@
   padding: 0.75rem 2.5rem;
   font-size: 1rem;
   font-weight: 700;
-  color: #111827;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #2D2D2D;
   border: 2px solid transparent;
   border-radius: 8px;
   cursor: pointer;
@@ -180,18 +180,18 @@
 }
 
 .liveButton:hover {
-  background-color: #f9fafb;
+  background-color: #1a1a1a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme='light'] .liveButton {
-  color: #ffffff;
-  background-color: #2D2D2D;
+  color: #111827;
+  background-color: #ffffff;
 }
 
 [data-theme='light'] .liveButton:hover {
-  background-color: #1a1a1a;
+  background-color: #f9fafb;
 }
 
 .liveButton:focus-visible {

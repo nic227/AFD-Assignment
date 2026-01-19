@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './About.module.css';
 
-const About: React.FC = () => {
+const About: React.FC = memo(() => {
   return (
     <section className={styles.aboutSection} id="about">
       <h2 className={styles.aboutTitle}>About Me</h2>
@@ -59,6 +59,7 @@ const About: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
+About.displayName = 'About';
 export default About;

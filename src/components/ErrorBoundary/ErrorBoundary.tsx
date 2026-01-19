@@ -28,12 +28,13 @@ class ErrorBoundary extends React.Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className={styles.errorContainer}>
+        <div className={styles.errorContainer} role="alert" aria-live="assertive">
           <h1>Oops! Something went wrong</h1>
           <p>{this.state.error?.message}</p>
           <button 
             onClick={() => this.setState({ hasError: false, error: null })}
             className={styles.errorButton}
+            aria-label="Retry after error"
           >
             Try again
           </button>

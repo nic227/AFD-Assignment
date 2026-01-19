@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { memo, useMemo } from 'react';
 import styles from "./Footer.module.css";
 
 const quickLinks = [
@@ -37,7 +38,9 @@ const socialLinks = [
   },
 ];
 
-export default function Footer() {
+const Footer = memo(() => {
+  const year = useMemo(() => new Date().getFullYear(), []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -84,7 +87,7 @@ export default function Footer() {
 
         <div className={styles.bottomSection}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Nicole Grima. All rights reserved.
+            © {year} Nicole Grima. All rights reserved.
           </p>
           <div className={styles.bottomLinks}>
             <a className={styles.bottomLink} href="#privacy">
@@ -98,4 +101,7 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = 'Footer';
+export default Footer;

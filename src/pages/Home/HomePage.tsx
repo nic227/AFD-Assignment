@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import AboutPage from '../About/AboutPage';
 import ProjectsPage from '../Projects/ProjectsPage';
 import ContactPage from '../Contact/ContactPage';
@@ -15,7 +15,7 @@ import styles from './HomePage.module.css';
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const techStack = [
+  const techStack = useMemo(() => [
     { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" /> },
     { name: 'CSS3', icon: <img className={styles.techIconImage} src={cssIcon} alt="CSS3" /> },
     { name: 'React', icon: <img className={styles.techIconImage} src={reactIcon} alt="React" /> },
@@ -24,7 +24,10 @@ const Portfolio = () => {
     { name: 'Git', icon: <img className={styles.techIconImage} src={gitIcon} alt="Git" /> },
     { name: 'GitHub', icon: <img className={styles.techIconImage} src={githubIcon} alt="GitHub" /> },
     { name: 'Next.js', icon: <img className={styles.techIconImage} src={nextIcon} alt="Next.js" /> },
-  ];
+  ], []);
+
+  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
+  const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
   return (
     <div className={styles.container}>
@@ -45,10 +48,10 @@ const Portfolio = () => {
             </div>
 
             <div className={styles.buttonGroup}>
-              <a href="#contact" className={styles.btnPrimary}>
+              <a href="#contact" className={styles.btnPrimary} aria-label="Get in touch with me">
                 Get In Touch
               </a>
-              <button className={styles.btnSecondary}>View Resume</button>
+              <button className={styles.btnSecondary} aria-label="View my resume">View Resume</button>
             </div>
           </div>
 
@@ -68,8 +71,8 @@ const Portfolio = () => {
 
               <div
                 className={`${styles.circleMain} ${isHovered ? styles.hovered : ''}`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <div className={styles.outerRing}>
                   <div className={styles.ringDot1}></div>

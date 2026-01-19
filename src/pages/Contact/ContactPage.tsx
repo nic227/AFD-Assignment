@@ -1,46 +1,35 @@
-import { useState } from 'react';
-import styles from './contact.module.css';
+import { useEffect, useCallback } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { updateFormField, setSuccess } from '../../store/slices/contactSlice';
+import { submitContactForm } from '../../store/thunks';
+import styles from './Contact.module.css';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const dispatch = useAppDispatch();
+  const { formData, errors, loading, success, error } = useAppSelector((state) => state.contact);
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Please enter a valid email';
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    else if (formData.message.trim().length < 10) newErrors.message = 'Message must be at least 10 characters';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  // Auto-hide success message after 4 seconds
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        dispatch(setSuccess(false));
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, dispatch]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
-  };
+    dispatch(updateFormField({ 
+      field: name as keyof typeof formData, 
+      value 
+    }));
+  }, [dispatch]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) return;
-    setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitSuccess(false), 4000);
-  };
+    dispatch(submitContactForm(formData));
+  }, [dispatch, formData]);
 
   return (
     <section className={styles.contactSection} id="contact">
@@ -49,13 +38,19 @@ export default function Contact() {
       <p className={styles.subheading}>
         For enquiries or project discussions, please use the contact form below.      </p>
 
-      {submitSuccess && (
+      {success && (
         <div className={styles.success}>
           ✓ Thank you! Your message has been sent successfully.
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className={styles.form}>
+      {error && (
+        <div className={styles.error} role="alert">
+          {error}
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className={styles.form} noValidate>
         <div className={styles.row}>
           <div className={styles.formGroup}>
             <label htmlFor="name" className={styles.label}>Full Name</label>
@@ -67,8 +62,11 @@ export default function Contact() {
               onChange={handleChange}
               placeholder="John Doe"
               className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
+              aria-describedby={errors.name ? 'name-error' : undefined}
+              aria-invalid={!!errors.name}
+              required
             />
-            {errors.name && <span className={styles.error}>{errors.name}</span>}
+            {errors.name && <span className={styles.error} id="name-error">{errors.name}</span>}
           </div>
 
           <div className={styles.formGroup}>
@@ -81,8 +79,11 @@ export default function Contact() {
               onChange={handleChange}
               placeholder="john@example.com"
               className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
+              aria-describedby={errors.email ? 'email-error' : undefined}
+              aria-invalid={!!errors.email}
+              required
             />
-            {errors.email && <span className={styles.error}>{errors.email}</span>}
+            {errors.email && <span className={styles.error} id="email-error">{errors.email}</span>}
           </div>
         </div>
 
@@ -96,8 +97,11 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="How can I help you?"
             className={`${styles.input} ${errors.subject ? styles.inputError : ''}`}
+            aria-describedby={errors.subject ? 'subject-error' : undefined}
+            aria-invalid={!!errors.subject}
+            required
           />
-          {errors.subject && <span className={styles.error}>{errors.subject}</span>}
+          {errors.subject && <span className={styles.error} id="subject-error">{errors.subject}</span>}
         </div>
 
         <div className={styles.formGroup}>
@@ -109,16 +113,20 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Send me a message..."
             className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
+            aria-describedby={errors.message ? 'message-error' : undefined}
+            aria-invalid={!!errors.message}
+            required
           />
-          {errors.message && <span className={styles.error}>{errors.message}</span>}
+          {errors.message && <span className={styles.error} id="message-error">{errors.message}</span>}
         </div>
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className={`${styles.button} ${isSubmitting ? styles.buttonDisabled : ''}`}
+          disabled={loading}
+          className={`${styles.button} ${loading ? styles.buttonDisabled : ''}`}
+          aria-busy={loading}
         >
-          {isSubmitting ? 'Sending...' : 'Send message'}
+          {loading ? 'Sending...' : 'Send message'}
         </button>
       </form>
       </div>
