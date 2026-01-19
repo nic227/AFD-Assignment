@@ -10,13 +10,6 @@ export const fetchProjects = createAsyncThunk(
   'projects/fetchProjects',
   async (_, { rejectWithValue }) => {
     try {
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      // In a real app, replace with:
-      // const response = await fetch('/api/projects');
-      // if (!response.ok) throw new Error('Failed to fetch projects');
-      // return response.json();
 
       return projectsData;
     } catch (error) {

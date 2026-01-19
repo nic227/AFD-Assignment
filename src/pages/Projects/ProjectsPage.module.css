@@ -102,15 +102,15 @@
 
 .projectCard:nth-child(1) {
   animation: slideInUp 0.6s ease-out;
-}
-
-.projectCard:nth-child(2) {
-  animation: slideInUp 0.8s ease-out;
-}
-
-.projectCard:nth-child(3) {
-  animation: slideInUp 1s ease-out;
-}
+  }
+  
+  .projectCard:nth-child(2) {
+    animation: slideInUp 0.6s ease-out;
+  }
+  
+  .projectCard:nth-child(3) {
+    animation: slideInUp 0.6s ease-out;
+  }
 
 .projectImageContainer {
   position: relative;
