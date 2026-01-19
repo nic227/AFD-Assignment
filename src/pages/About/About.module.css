@@ -147,13 +147,22 @@
     padding: 2rem 1rem;
   }
 
+
   .aboutSection {
-    padding: 2rem 1rem;
+    padding: 5.5rem 1rem 2rem 1rem;
+    position: relative;
+    z-index: 1;
   }
 
   .aboutTitle {
     font-size: 2rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    display: block;
+    background: none;
+    color: var(--text-primary);
+    text-align: center;
   }
 
   .stats {

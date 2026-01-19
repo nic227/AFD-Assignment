@@ -1,14 +1,20 @@
+
 import { Link } from 'react-router-dom';
-import { useCallback, memo } from 'react';
+import { useCallback, memo, useState } from 'react';
 import { useTheme } from '../../context/useTheme';
 import styles from './Navbar.module.css';
 
+
 const Navbar = memo(() => {
   const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleToggleTheme = useCallback(() => {
     toggleTheme();
   }, [toggleTheme]);
+
+  const handleBurgerClick = () => setMenuOpen((open) => !open);
+  const handleNavLinkClick = () => setMenuOpen(false);
 
   return (
     <nav className={styles.navbar}>
@@ -16,24 +22,38 @@ const Navbar = memo(() => {
         <Link to="/" className={styles.navBrand}>
           Nicole Grima
         </Link>
-        <ul className={styles.navList}>
+        <button
+          className={styles.burger}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="main-menu"
+          onClick={handleBurgerClick}
+        >
+          <span className={styles.burgerBar}></span>
+          <span className={styles.burgerBar}></span>
+          <span className={styles.burgerBar}></span>
+        </button>
+        <ul
+          id="main-menu"
+          className={`${styles.navList} ${menuOpen ? styles.open : ''}`}
+        >
           <li className={styles.navItem}>
-            <Link to="/" className={styles.navLink}>
+            <Link to="/" className={styles.navLink} onClick={handleNavLinkClick}>
               Home
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link to="/about" className={styles.navLink}>
+            <Link to="/about" className={styles.navLink} onClick={handleNavLinkClick}>
               About
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link to="/projects" className={styles.navLink}>
+            <Link to="/projects" className={styles.navLink} onClick={handleNavLinkClick}>
               Projects
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link to="/contact" className={styles.navLink}>
+            <Link to="/contact" className={styles.navLink} onClick={handleNavLinkClick}>
               Contact
             </Link>
           </li>

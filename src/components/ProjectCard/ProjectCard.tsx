@@ -25,10 +25,7 @@ export const ProjectCard = memo<ProjectCardProps>(({ project, onLiveClick }) => 
       </div>
 
       <div className={styles.projectFooter}>
-        <span className={styles.techBadge} aria-label={`Built with ${project.tech}`}>
-          {project.tech}
-        </span>
-
+        <strong>{project.tech}</strong>
         <button
           onClick={handleClick}
           className={styles.liveButton}
