@@ -2,7 +2,30 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 3rem 2rem;
+  padding-top: 120px;
   scroll-margin-top: 85px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .aboutTitle {
@@ -11,6 +34,7 @@
   margin-bottom: 3rem;
   text-align: center;
   color: white;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .aboutContent {
@@ -24,6 +48,7 @@
   line-height: 1.75;
   margin-bottom: 4rem;
   text-align: justify;
+  animation: fadeInDown 1s ease-out;
 }
 
 .stats {
@@ -31,6 +56,7 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  animation: slideInUp 1.2s ease-out;
 }
 
 .statItem {

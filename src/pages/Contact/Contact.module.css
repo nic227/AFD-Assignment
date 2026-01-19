@@ -1,24 +1,47 @@
 .container {
   max-width: 650px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 0 2rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contactSection {
   background-color: #0C0E25;
-  padding: 4rem 2rem;
+  padding-top: 120px;
   color: white;
   scroll-margin-top: 85px;
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 3.75rem;
   font-weight: 900;
   margin-bottom: 0.75rem;
   color: #ffffff;
   letter-spacing: -0.02em;
   text-align: center;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .subheading {
@@ -27,6 +50,7 @@
   margin-bottom: 3rem;
   line-height: 1.6;
   text-align: center;
+  animation: fadeInDown 1s ease-out;
 }
 
 .enquiries {
@@ -41,6 +65,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  animation: slideInUp 1.2s ease-out;
 }
 
 .row {

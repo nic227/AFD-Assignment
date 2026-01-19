@@ -1,18 +1,40 @@
-import { Routes, Route } from "react-router-dom";
-import HomePage from "../pages/Home/HomePage";
-import AboutPage from "../pages/About/AboutPage";
-import ProjectsPage from "../pages/ProjectsPage";
-import ContactPage from "../pages/Contact/ContactPage";
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect, lazy, Suspense } from 'react';
+import Navbar from '../components/Navbar/Navbar';
+import HomePage from '../pages/Home/HomePage';
+import AboutPage from '../pages/About/AboutPage';
+import Footer from '../components/Footer/Footer';
+import { LoadingSpinner } from '../components/LoadingSpinner/LoadingSpinner';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
+
+// Lazy load route components
+const ProjectsPage = lazy(() => import('../pages/Projects/ProjectsPage'));
+const ContactPage = lazy(() => import('../pages/Contact/ContactPage'));
+const ProjectDetailsPage = lazy(() => import('../pages/Projects/ProjectDetailsPage'));
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      <Navbar />
+      <ErrorBoundary>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />}>
+              <Route path=":projectId" element={<ProjectDetailsPage />} />
+            </Route>
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
+      <Footer />
     </div>
   );
 }

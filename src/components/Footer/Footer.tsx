@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import styles from "./Footer.module.css";
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -64,9 +65,9 @@ export default function Footer() {
             <h3 className={styles.columnTitle}>Quick Links</h3>
             <div className={styles.linkList}>
               {quickLinks.map((link) => (
-                <a key={link.label} className={styles.link} href={link.href}>
+                <Link key={link.label} className={styles.link} to={link.href}>
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

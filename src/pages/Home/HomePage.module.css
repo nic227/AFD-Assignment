@@ -8,7 +8,6 @@
   font-family: sans-serif;
   overflow: auto;
   position: relative;
-  padding-top: 80px;
 }
 
 /* Background Animation */
@@ -20,60 +19,26 @@
   display: none;
 }
 
-/* Navigation */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  background-color: #0C0E25;
-  width: 100%;
-  box-sizing: border-box;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.navInner {
-  max-width: 80rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-.navBrand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.navBrandText {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #f97316;
-}
-
-.navLinks {
-  display: flex;
-  gap: 52px;
-}
-
-.navLink {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-decoration: none;
-  transition: color 300ms;
-}
-
-.navLink:hover {
-  color: #f97316;
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hero Section */
@@ -82,7 +47,7 @@
   z-index: 10;
   padding-left: 32px;
   padding-right: 32px;
-  padding-top: 16px;
+  padding-top: 120px;
   padding-bottom: 16px;
   max-width: 80rem;
   margin-left: auto;
@@ -110,6 +75,7 @@
   color: #e2e8f0;
   line-height: 1.25;
   margin: 0;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .titleDot {
@@ -141,6 +107,7 @@
   font-weight: 600;
   color: #e2e8f0;
   margin: 0;
+  animation: fadeInDown 1s ease-out;
 }
 
 .subtitle {
@@ -160,6 +127,7 @@
   display: flex;
   gap: 16px;
   margin-top: 16px;
+  animation: slideInUp 1.2s ease-out;
 }
 
 .btnPrimary {

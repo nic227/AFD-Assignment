@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AboutPage from '../About/AboutPage';
+import ProjectsPage from '../Projects/ProjectsPage';
 import ContactPage from '../Contact/ContactPage';
 import html5Icon from '../../assets/icons/html5.svg';
 import cssIcon from '../../assets/icons/css.svg';
@@ -35,22 +36,6 @@ const Portfolio = () => {
 
   return (
     <div className={styles.container}>
-      <nav className={styles.nav}>
-        <div className={styles.navInner}>
-          <div className={styles.navBrand}>
-            <span className={styles.navBrandText}>Nicole Grima</span>
-          </div>
-
-          <div className={styles.navLinks}>
-            {['Home', 'About', 'Projects', 'Contact'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className={styles.navLink}>
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
       <section className={styles.hero} id="home">
         <div className={styles.heroGrid}>
           <div className={styles.heroContent}>
@@ -146,6 +131,7 @@ const Portfolio = () => {
       </section>
 
       <AboutPage />
+      <ProjectsPage />
       <ContactPage />
     </div>
   );
