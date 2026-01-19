@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 import { memo, useMemo } from 'react';
-import styles from "./Footer.module.css";
+import styles from './Footer.module.css';
 
 const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const socialLinks = [
   {
-    id: "linkedin",
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/nicole-grima-32a74317b/?originalSubdomain=mt",
+    id: 'linkedin',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/nicole-grima-32a74317b/?originalSubdomain=mt',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden>
         <path
@@ -24,9 +24,9 @@ const socialLinks = [
     ),
   },
   {
-    id: "github",
-    label: "GitHub",
-    href: "https://github.com/nic227",
+    id: 'github',
+    label: 'GitHub',
+    href: 'https://github.com/nic227',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden>
         <path
@@ -48,7 +48,8 @@ const Footer = memo(() => {
           <div className={styles.column}>
             <div className={styles.logo}>Nicole Grima</div>
             <p className={styles.description}>
-              Full-stack developer passionate about creating beautiful and functional web experiences.
+              Full-stack developer passionate about creating beautiful and functional web
+              experiences.
             </p>
             <div className={styles.socialContainer}>
               {socialLinks.map((social) => (
@@ -86,9 +87,7 @@ const Footer = memo(() => {
         </div>
 
         <div className={styles.bottomSection}>
-          <p className={styles.copyright}>
-            © {year} Nicole Grima. All rights reserved.
-          </p>
+          <p className={styles.copyright}>© {year} Nicole Grima. All rights reserved.</p>
           <div className={styles.bottomLinks}>
             <a className={styles.bottomLink} href="#privacy">
               Privacy Policy

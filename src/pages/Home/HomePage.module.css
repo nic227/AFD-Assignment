@@ -8,7 +8,9 @@
   font-family: sans-serif;
   overflow: auto;
   position: relative;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Background Animation */
@@ -294,7 +296,7 @@
 .ngText {
   font-size: 3.5rem;
   font-weight: 900;
-  color: #0C0E25;
+  color: #0c0e25;
   z-index: 10;
   transition: transform 300ms;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -321,9 +323,15 @@
   box-shadow: 0 10px 15px -3px rgba(252, 211, 77, 0.8);
 }
 
-.orbitDotA { transform: rotate(0deg) translateX(110px); }
-.orbitDotB { transform: rotate(120deg) translateX(110px); }
-.orbitDotC { transform: rotate(240deg) translateX(110px); }
+.orbitDotA {
+  transform: rotate(0deg) translateX(110px);
+}
+.orbitDotB {
+  transform: rotate(120deg) translateX(110px);
+}
+.orbitDotC {
+  transform: rotate(240deg) translateX(110px);
+}
 
 .hovered .outerRing {
   transform: scale(1.1);
@@ -332,12 +340,18 @@
 
 .hovered .ngCircle {
   transform: scale(1.05);
-  box-shadow: 0 30px 70px rgba(249, 115, 22, 0.5), 0 0 80px rgba(249, 115, 22, 0.3);
+  box-shadow:
+    0 30px 70px rgba(249, 115, 22, 0.5),
+    0 0 80px rgba(249, 115, 22, 0.3);
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Tech Stack Section */
@@ -352,7 +366,9 @@
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
   border-top: 1px solid rgba(249, 115, 22, 0.1);
   border-bottom: 1px solid rgba(249, 115, 22, 0.1);
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .techContainer {
@@ -441,10 +457,10 @@
   }
 }
 
-
 /* Animations */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
@@ -453,7 +469,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {

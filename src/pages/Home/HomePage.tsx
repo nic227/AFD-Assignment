@@ -15,16 +15,28 @@ import styles from './HomePage.module.css';
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const techStack = useMemo(() => [
-    { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" /> },
-    { name: 'CSS3', icon: <img className={styles.techIconImage} src={cssIcon} alt="CSS3" /> },
-    { name: 'React', icon: <img className={styles.techIconImage} src={reactIcon} alt="React" /> },
-    { name: 'Node.js', icon: <img className={styles.techIconImage} src={nodeIcon} alt="Node.js" /> },
-    { name: 'Vue', icon: <img className={styles.techIconImage} src={vueIcon} alt="Vue" /> },
-    { name: 'Git', icon: <img className={styles.techIconImage} src={gitIcon} alt="Git" /> },
-    { name: 'GitHub', icon: <img className={styles.techIconImage} src={githubIcon} alt="GitHub" /> },
-    { name: 'Next.js', icon: <img className={styles.techIconImage} src={nextIcon} alt="Next.js" /> },
-  ], []);
+  const techStack = useMemo(
+    () => [
+      { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" /> },
+      { name: 'CSS3', icon: <img className={styles.techIconImage} src={cssIcon} alt="CSS3" /> },
+      { name: 'React', icon: <img className={styles.techIconImage} src={reactIcon} alt="React" /> },
+      {
+        name: 'Node.js',
+        icon: <img className={styles.techIconImage} src={nodeIcon} alt="Node.js" />,
+      },
+      { name: 'Vue', icon: <img className={styles.techIconImage} src={vueIcon} alt="Vue" /> },
+      { name: 'Git', icon: <img className={styles.techIconImage} src={gitIcon} alt="Git" /> },
+      {
+        name: 'GitHub',
+        icon: <img className={styles.techIconImage} src={githubIcon} alt="GitHub" />,
+      },
+      {
+        name: 'Next.js',
+        icon: <img className={styles.techIconImage} src={nextIcon} alt="Next.js" />,
+      },
+    ],
+    []
+  );
 
   const handleMouseEnter = useCallback(() => setIsHovered(true), []);
   const handleMouseLeave = useCallback(() => setIsHovered(false), []);
@@ -51,7 +63,9 @@ const Portfolio = () => {
               <a href="#contact" className={styles.btnPrimary} aria-label="Get in touch with me">
                 Get In Touch
               </a>
-              <button className={styles.btnSecondary} aria-label="View my resume">View Resume</button>
+              <button className={styles.btnSecondary} aria-label="View my resume">
+                View Resume
+              </button>
             </div>
           </div>
 

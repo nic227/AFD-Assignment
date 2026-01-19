@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import App from './app/App.tsx'
-import { ThemeProvider } from './context/ThemeContext'
-import { store } from './store/store'
-import './styles/index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import App from './app/App.tsx';
+import { ThemeProvider } from './context/ThemeContext';
+import { store } from './store/store';
+import './styles/index.css';
 
 // Scroll to top on every page load/refresh
 if ('scrollRestoration' in history) {
@@ -21,5 +21,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </BrowserRouter>
       </ThemeProvider>
     </Provider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

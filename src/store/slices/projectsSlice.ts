@@ -89,19 +89,13 @@ const projectsSlice = createSlice({
       })
       .addCase(fetchProjects.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload as string || 'Failed to fetch projects';
+        state.error = (action.payload as string) || 'Failed to fetch projects';
       });
   },
 });
 
-export const { 
-  setProjects, 
-  selectProject, 
-  setActiveFilter, 
-  setLoading, 
-  setError,
-  clearError 
-} = projectsSlice.actions;
+export const { setProjects, selectProject, setActiveFilter, setLoading, setError, clearError } =
+  projectsSlice.actions;
 
 export { fetchProjects };
 export default projectsSlice.reducer;

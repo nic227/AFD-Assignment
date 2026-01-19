@@ -43,12 +43,7 @@ const themeSlice = createSlice({
   },
 });
 
-export const { 
-  toggleTheme, 
-  setTheme, 
-  setFontSize, 
-  toggleHighContrast, 
-  setReducedMotion 
-} = themeSlice.actions;
+export const { toggleTheme, setTheme, setFontSize, toggleHighContrast, setReducedMotion } =
+  themeSlice.actions;
 
 export default themeSlice.reducer;

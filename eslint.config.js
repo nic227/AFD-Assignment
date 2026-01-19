@@ -17,10 +17,17 @@ export default defineConfig([
       tseslint.configs.recommended,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
+      'prettier',
     ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+    plugins: {
+      prettier: (await import('eslint-plugin-prettier')).default,
+    },
+    rules: {
+      'prettier/prettier': 'error',
     },
   },
 ])

@@ -105,7 +105,7 @@ const contactSlice = createSlice({
         if (typeof action.payload === 'object' && action.payload !== null) {
           state.errors = action.payload as FormErrors;
         } else {
-          state.error = action.payload as string || 'Failed to submit form';
+          state.error = (action.payload as string) || 'Failed to submit form';
         }
       });
   },

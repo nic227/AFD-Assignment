@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component<Props, State> {
         <div className={styles.errorContainer} role="alert" aria-live="assertive">
           <h1>Oops! Something went wrong</h1>
           <p>{this.state.error?.message}</p>
-          <button 
+          <button
             onClick={() => this.setState({ hasError: false, error: null })}
             className={styles.errorButton}
             aria-label="Retry after error"

@@ -11,18 +11,16 @@ export const fetchProjects = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       // In a real app, replace with:
       // const response = await fetch('/api/projects');
       // if (!response.ok) throw new Error('Failed to fetch projects');
       // return response.json();
-      
+
       return projectsData;
     } catch (error) {
-      return rejectWithValue(
-        error instanceof Error ? error.message : 'Failed to fetch projects'
-      );
+      return rejectWithValue(error instanceof Error ? error.message : 'Failed to fetch projects');
     }
   }
 );
@@ -53,7 +51,7 @@ export const submitContactForm = createAsyncThunk(
       }
 
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // In a real app, replace with:
       // const response = await fetch('/api/contact', {
@@ -69,9 +67,7 @@ export const submitContactForm = createAsyncThunk(
         message: 'Thank you! Your message has been sent successfully.',
       };
     } catch (error) {
-      return rejectWithValue(
-        error instanceof Error ? error.message : 'Failed to submit form'
-      );
+      return rejectWithValue(error instanceof Error ? error.message : 'Failed to submit form');
     }
   }
 );

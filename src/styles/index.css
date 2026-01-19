@@ -5,33 +5,35 @@
 /* stylelint-enable */
 
 :root {
-  --bg-primary: #0C0E25;
-  --bg-secondary: #1A1D3A;
+  --bg-primary: #0c0e25;
+  --bg-secondary: #1a1d3a;
   --text-primary: white;
-  --text-secondary: #B0B0B0;
+  --text-secondary: #b0b0b0;
   --border-color: #333;
   --accent-color: #f97316;
 }
 
 [data-theme='light'] {
-  --bg-primary: #FFE5CC;
-  --bg-secondary: #FFD9B3;
-  --text-primary: #2D2D2D;
+  --bg-primary: #ffe5cc;
+  --bg-secondary: #ffd9b3;
+  --text-primary: #2d2d2d;
   --text-secondary: #666666;
-  --border-color: #FFCF99;
+  --border-color: #ffcf99;
   --accent-color: #f97316;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 * {

@@ -5,7 +5,7 @@ import styles from './Navbar.module.css';
 
 const Navbar = memo(() => {
   const { theme, toggleTheme } = useTheme();
-  
+
   const handleToggleTheme = useCallback(() => {
     toggleTheme();
   }, [toggleTheme]);
