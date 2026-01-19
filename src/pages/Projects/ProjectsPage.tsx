@@ -12,7 +12,7 @@ interface Project {
   image: string;
 }
 
-export default function Projects() {
+function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>('ALL');
   const navigate = useNavigate();
 
@@ -82,7 +82,7 @@ export default function Projects() {
                   onClick={() => handleLiveClick(project.id)} // Navigates to /projects/:projectId
                   className={styles.liveButton}
                 >
-                  Live →
+                  Live
                 </button>
               </div>
             </div>

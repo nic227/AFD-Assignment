@@ -22,5 +22,3 @@ const ProjectDetailsPage = () => {
 };
 
 export default ProjectDetailsPage;
-
-export default ProjectDetailsPage;

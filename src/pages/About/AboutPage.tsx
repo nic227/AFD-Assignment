@@ -37,8 +37,7 @@ const About: React.FC = () => {
             </div>
             <div className={styles.progressBar}>
               <div 
-                className={styles.progressFill} 
-                style={{ width: '100%' }}
+                className={`${styles.progressFill} ${styles.progressFull}`}
               ></div>
             </div>
           </div>
@@ -52,8 +51,7 @@ const About: React.FC = () => {
             </div>
             <div className={styles.progressBar}>
               <div 
-                className={styles.progressFill} 
-                style={{ width: '100%' }}
+                className={`${styles.progressFill} ${styles.progressFull}`}
               ></div>
             </div>
           </div>

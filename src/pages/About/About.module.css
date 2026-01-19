@@ -33,7 +33,7 @@
   font-weight: 900;
   margin-bottom: 3rem;
   text-align: center;
-  color: white;
+  color: var(--text-primary);
   animation: fadeInDown 0.8s ease-out;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .aboutText {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 4rem;
@@ -66,8 +66,8 @@
   justify-content: center;
   padding: 2rem;
   border-radius: 0.5rem;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   width: 280px;
   height: 200px;
   position: relative;
@@ -87,7 +87,7 @@
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 .statPlus {
@@ -96,7 +96,7 @@
 
 .statLabel {
   font-size: 0.95rem;
-  color: #9ca3af;
+  color: var(--text-secondary);
   line-height: 1.4;
   text-align: center;
   font-weight: normal;
@@ -116,6 +116,10 @@
   height: 100%;
   background-color: #f97316;
   border-radius: 10px;
+}
+
+.progressFull {
+  width: 100%;
 }
 
 /* Responsive Design */

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './ErrorBoundary.module.css';
 
 interface Props {
   children: React.ReactNode;
@@ -27,12 +28,12 @@ class ErrorBoundary extends React.Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <div className={styles.errorContainer}>
           <h1>Oops! Something went wrong</h1>
           <p>{this.state.error?.message}</p>
           <button 
             onClick={() => this.setState({ hasError: false, error: null })}
-            style={{ marginTop: '1rem', padding: '0.5rem 1rem', cursor: 'pointer' }}
+            className={styles.errorButton}
           >
             Try again
           </button>

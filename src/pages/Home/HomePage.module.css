@@ -3,11 +3,12 @@
 /* Container and Layout */
 .container {
   min-height: 100vh;
-  background-color: #0C0E25;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: sans-serif;
   overflow: auto;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Background Animation */
@@ -72,7 +73,7 @@
 .heroTitle {
   font-size: 3.75rem;
   font-weight: 900;
-  color: #e2e8f0;
+  color: var(--text-primary);
   line-height: 1.25;
   margin: 0;
   animation: fadeInDown 0.8s ease-out;
@@ -105,7 +106,7 @@
 .introText {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin: 0;
   animation: fadeInDown 1s ease-out;
 }
@@ -113,7 +114,7 @@
 .subtitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--text-primary);
   margin-bottom: 8px;
   margin-top: 0;
 }
@@ -246,6 +247,8 @@
   border-radius: 50%;
   border: 2px solid #f97316;
   transition: all 500ms;
+  opacity: 0.4;
+  animation: spin 24s linear infinite;
 }
 
 .ringDot1 {
@@ -285,6 +288,7 @@
   z-index: 10;
   overflow: hidden;
   transition: all 500ms;
+  box-shadow: 0 20px 50px rgba(249, 115, 22, 0.4);
 }
 
 .ngText {
@@ -317,6 +321,25 @@
   box-shadow: 0 10px 15px -3px rgba(252, 211, 77, 0.8);
 }
 
+.orbitDotA { transform: rotate(0deg) translateX(110px); }
+.orbitDotB { transform: rotate(120deg) translateX(110px); }
+.orbitDotC { transform: rotate(240deg) translateX(110px); }
+
+.hovered .outerRing {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+
+.hovered .ngCircle {
+  transform: scale(1.05);
+  box-shadow: 0 30px 70px rgba(249, 115, 22, 0.5), 0 0 80px rgba(249, 115, 22, 0.3);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Tech Stack Section */
 .techStack {
   position: relative;
@@ -325,10 +348,11 @@
   padding-right: 8px;
   padding-top: 6px;
   padding-bottom: 6px;
-  margin-top: 0;
+  margin-top: -20px;
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
   border-top: 1px solid rgba(249, 115, 22, 0.1);
   border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .techContainer {
@@ -364,7 +388,7 @@
   align-items: center;
   gap: 12px;
   padding: 24px 32px;
-  background-color: #0C0E25;
+  background-color: var(--bg-secondary);
   border: 1px solid rgba(249, 115, 22, 0.2);
   border-radius: 8px;
   cursor: pointer;
@@ -397,7 +421,7 @@
 .techName {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-primary);
   white-space: nowrap;
   margin: 0;
 }

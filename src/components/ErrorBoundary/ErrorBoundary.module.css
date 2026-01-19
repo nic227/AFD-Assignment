@@ -1,0 +1,21 @@
+.errorContainer {
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.errorButton:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}

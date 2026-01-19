@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import AboutPage from '../About/AboutPage';
 import ProjectsPage from '../Projects/ProjectsPage';
 import ContactPage from '../Contact/ContactPage';
@@ -14,14 +14,6 @@ import styles from './HomePage.module.css';
 
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [autoRotation, setAutoRotation] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAutoRotation((prev) => (prev + 1.5) % 360);
-    }, 30);
-    return () => clearInterval(interval);
-  }, []);
 
   const techStack = [
     { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" /> },
@@ -75,40 +67,21 @@ const Portfolio = () => {
               </div>
 
               <div
-                className={styles.circleMain}
+                className={`${styles.circleMain} ${isHovered ? styles.hovered : ''}`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <div
-                  className={styles.outerRing}
-                  style={{
-                    transform: `rotate(${autoRotation}deg) scale(${isHovered ? 1.1 : 1})`,
-                    opacity: isHovered ? 0.6 : 0.4,
-                  }}
-                >
+                <div className={styles.outerRing}>
                   <div className={styles.ringDot1}></div>
                   <div className={styles.ringDot2}></div>
+                  <div className={`${styles.orbitDot} ${styles.orbitDotA}`}></div>
+                  <div className={`${styles.orbitDot} ${styles.orbitDotB}`}></div>
+                  <div className={`${styles.orbitDot} ${styles.orbitDotC}`}></div>
                 </div>
 
-                <div
-                  className={styles.ngCircle}
-                  style={{
-                    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-                    boxShadow: isHovered
-                      ? '0 30px 70px rgba(249, 115, 22, 0.5), 0 0 80px rgba(249, 115, 22, 0.3)'
-                      : '0 20px 50px rgba(249, 115, 22, 0.4)',
-                  }}
-                >
+                <div className={styles.ngCircle}>
                   <div className={styles.innerGlow}></div>
                 </div>
-
-                {[0, 120, 240].map((angle, i) => (
-                  <div
-                    key={`orbit-${angle}-${i}`}
-                    className={styles.orbitDot}
-                    style={{ transform: `rotate(${angle + autoRotation * 2}deg) translateX(110px)` }}
-                  />
-                ))}
               </div>
             </div>
           </div>
