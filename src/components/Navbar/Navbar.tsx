@@ -1,34 +1,50 @@
-// Navbar component
-// Displays site navigation, burger menu for mobile, and theme toggle
-import { Link } from 'react-router-dom';
+
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCallback, memo, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { toggleTheme } from '../../store/slices/themeSlice';
 import styles from './Navbar.module.css';
+
 
 const Navbar = memo(() => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.mode);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Toggle dark/light theme
   const handleToggleTheme = useCallback(() => {
     dispatch(toggleTheme());
   }, [dispatch]);
 
-  // Open/close burger menu
   const handleBurgerClick = () => setMenuOpen((open) => !open);
-  // Close menu on navigation
   const handleNavLinkClick = () => setMenuOpen(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Home link handler: always go to '/' and scroll to #home
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/', { replace: false });
+      setTimeout(() => {
+        const el = document.getElementById('home');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById('home');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
-        {/* Brand link */}
         <Link to="/" className={styles.navBrand}>
           Nicole Grima
         </Link>
-        {/* Burger menu button for mobile */}
         <button
           className={styles.burger}
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -40,15 +56,14 @@ const Navbar = memo(() => {
           <span className={styles.burgerBar}></span>
           <span className={styles.burgerBar}></span>
         </button>
-        {/* Navigation links */}
         <ul
           id="main-menu"
           className={`${styles.navList} ${menuOpen ? styles.open : ''}`}
         >
           <li className={styles.navItem}>
-            <Link to="/" className={styles.navLink} onClick={handleNavLinkClick}>
+            <a href="#home" className={styles.navLink} onClick={handleHomeClick}>
               Home
-            </Link>
+            </a>
           </li>
           <li className={styles.navItem}>
             <Link to="/about" className={styles.navLink} onClick={handleNavLinkClick}>

@@ -1,21 +1,16 @@
-
-
-// HeroSection component
-// Displays the main hero section with intro, call-to-action, and animated visuals
 import { memo } from 'react';
 import styles from '../../pages/Home/HomePage.module.css';
 
 interface HeroSectionProps {
-  isHovered: boolean; // Whether the hero is hovered (for animation)
-  onMouseEnter: () => void; // Mouse enter handler
-  onMouseLeave: () => void; // Mouse leave handler
+  isHovered: boolean;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 }
 
 export const HeroSection = memo<HeroSectionProps>(
   ({ isHovered, onMouseEnter, onMouseLeave }) => (
     <section className={styles.hero} id="home">
       <div className={styles.heroGrid}>
-        {/* Main hero content */}
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
             My Portfolio<span className={styles.titleDot}>.</span>
@@ -30,18 +25,22 @@ export const HeroSection = memo<HeroSectionProps>(
             <h2 className={styles.subtitle}>MCAST Student</h2>
           </div>
 
-          {/* Call-to-action buttons */}
           <div className={styles.buttonGroup}>
             <a href="#contact" className={styles.btnPrimary} aria-label="Get in touch with me">
               Get In Touch
             </a>
-            <button className={styles.btnSecondary} aria-label="View my resume">
-              View Resume
-            </button>
+            <a
+              href="/resume.pdf"
+              className={styles.btnSecondary}
+              aria-label="View my resume"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              My Resume
+            </a>
           </div>
         </div>
 
-        {/* Animated floating elements and visuals */}
         <div className={styles.circleContainer}>
           <div className={styles.circleWrapper}>
             <div className={`${styles.floatingEl} ${styles.floatingEl1}`}>
