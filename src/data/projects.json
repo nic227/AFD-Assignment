@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Budget Buddy",
     "tech": "REACT",
-    "image": "/src/assets/images/budget-buddy.webp",
+    "image": "/assets/images/budget-buddy.webp",
     "description": "A budgeting application for financial management. Budget Buddy helps users make informed financial decisions and stay on top of their finances with an intuitive, user-friendly interface. ",
     "link": "https://budget-buddy-project-deploy.vercel.app/"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Ascension Of The Forgotten",
     "tech": "REACT",
-    "image": "/src/assets/images/ascension-of-the-forgotten.webp",
+    "image": "/assets/images/ascension-of-the-forgotten.webp",
     "description": "An interactive gaming experience. Dive into a story-driven adventure with immersive gameplay, unique characters, and challenging puzzles.",
     "link": "https://ascension-project-vercel-deploy.vercel.app/"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Animated Card",
     "tech": "NEXT.JS",
-    "image": "/src/assets/images/animated-card.webp",
+    "image": "/assets/images/animated-card.webp",
     "description": "A modern animated card project featuring smooth transitions, interactive effects, and responsive design.",
     "link": "https://anaimated-card-project-deploy.vercel.app/"
   }

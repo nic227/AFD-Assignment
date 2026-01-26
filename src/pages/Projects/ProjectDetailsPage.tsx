@@ -1,5 +1,3 @@
-// ProjectDetailsPage component
-// Shows detailed information for a single project, with modal/dialog accessibility
 import { useCallback, useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
@@ -12,7 +10,6 @@ export default function ProjectDetailsPage() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  // Get projects and loading state from Redux
   const { projects, loading } = useAppSelector((state) => state.projects);
 
   // Ensure projects are available when user deep-links directly to /projects/:id
@@ -20,14 +17,12 @@ export default function ProjectDetailsPage() {
     if (!projects.length) dispatch(fetchProjects());
   }, [dispatch, projects.length]);
 
-  // Find the project by ID from the URL
   const project: Project | undefined = useMemo(() => {
     const id = Number(projectId);
     if (!Number.isFinite(id)) return undefined;
     return projects.find((p) => p.id === id);
   }, [projectId, projects]);
 
-  // Handler to close the details modal
   const close = useCallback(() => {
     navigate('/projects');
   }, [navigate]);
