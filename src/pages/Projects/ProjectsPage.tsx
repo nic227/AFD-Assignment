@@ -1,3 +1,5 @@
+// ProjectsPage displays a list of projects with filtering and navigation
+// Fetches projects, allows filtering by technology, and shows project cards
 import { useEffect, useCallback, useMemo } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
@@ -10,6 +12,7 @@ function ProjectsPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  // Get projects state from Redux
   const { projects, activeFilter, loading, error } = useAppSelector((state) => state.projects);
 
   // Fetch projects on component mount
@@ -17,15 +20,18 @@ function ProjectsPage() {
     dispatch(fetchProjects());
   }, [dispatch]);
 
+  // List of all technologies for filter tabs
   const technologies = useMemo(
     () => ['ALL', ...Array.from(new Set(projects.map((p) => p.tech)))],
     [projects]
   );
+  // Filtered projects based on active filter
   const filteredProjects = useMemo(
     () => (activeFilter === 'ALL' ? projects : projects.filter((p) => p.tech === activeFilter)),
     [projects, activeFilter]
   );
 
+  // Handler for clicking "Details" on a project card
   const handleLiveClick = useCallback(
     (projectId: number) => {
       navigate(`/projects/${projectId}`);
@@ -33,6 +39,7 @@ function ProjectsPage() {
     [navigate]
   );
 
+  // Handler for changing the active technology filter
   const handleFilterChange = useCallback(
     (tech: string) => {
       dispatch(setActiveFilter(tech));

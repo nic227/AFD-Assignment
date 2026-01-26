@@ -1,7 +1,10 @@
+// Footer component
+// Displays quick navigation links and social media icons
 import { Link } from 'react-router-dom';
 import { memo, useMemo } from 'react';
 import styles from './Footer.module.css';
 
+// List of quick navigation links
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -9,6 +12,7 @@ const quickLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
+// List of social media links with SVG icons
 const socialLinks = [
   {
     id: 'linkedin',

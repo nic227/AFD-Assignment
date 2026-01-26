@@ -1,3 +1,5 @@
+// HomePage component
+// Main landing page with hero section, tech stack, and links to other sections
 import { useState, useMemo, useCallback } from 'react';
 import AboutPage from '../About/AboutPage';
 import ProjectsPage from '../Projects/ProjectsPage';
@@ -17,6 +19,7 @@ import styles from './HomePage.module.css';
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  // List of technologies for the tech stack section
   const techStack = useMemo(
     () => [
       { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" /> },

@@ -1,3 +1,5 @@
+// ContactPage component
+// Renders the contact form and handles form state, validation, and submission
 import { useEffect, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { updateFormField, setSuccess } from '../../store/slices/contactSlice';
@@ -18,6 +20,7 @@ export default function ContactPage() {
     }
   }, [success, dispatch]);
 
+  // Handle input changes in the form
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
@@ -31,6 +34,7 @@ export default function ContactPage() {
     [dispatch]
   );
 
+  // Handle form submission
   const handleSubmit = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();

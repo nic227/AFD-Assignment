@@ -1,3 +1,5 @@
+// AboutPage component
+// Displays information about the developer, background, and experience
 import React, { memo } from 'react';
 import styles from './About.module.css';
 
@@ -7,6 +9,7 @@ const About: React.FC = memo(() => {
       <h2 className={styles.aboutTitle}>About Me</h2>
 
       <div className={styles.aboutContent}>
+        {/* Description */}
         <p className={styles.aboutText}>
           I'm currently pursuing a degree in Creative Computing, where I enjoy combining design and
           development to create clean, user-friendly digital experiences. I'm especially passionate
@@ -27,6 +30,7 @@ const About: React.FC = memo(() => {
           insight into the full lifecycle of digital product development.
         </p>
 
+        {/* Education and stats */}
         <div className={styles.stats}>
           <div className={styles.statItem}>
             <div className={styles.statNumber}>

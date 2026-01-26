@@ -1,14 +1,16 @@
+// ErrorBoundary component
+// Catches JavaScript errors in child components and displays a fallback UI
 import React from 'react';
 import styles from './ErrorBoundary.module.css';
 
 interface Props {
-  children: React.ReactNode;
-  fallback?: React.ReactNode;
+  children: React.ReactNode; // Child components to wrap
+  fallback?: React.ReactNode; // Optional custom fallback UI
 }
 
 interface State {
-  hasError: boolean;
-  error: Error | null;
+  hasError: boolean; // Whether an error has occurred
+  error: Error | null; // The error object
 }
 
 class ErrorBoundary extends React.Component<Props, State> {
@@ -17,10 +19,12 @@ class ErrorBoundary extends React.Component<Props, State> {
     this.state = { hasError: false, error: null };
   }
 
+  // Update state when an error is thrown
   static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
   }
 
+  // Log error details
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('Error caught by boundary:', error, errorInfo);
   }

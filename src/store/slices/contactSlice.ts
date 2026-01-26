@@ -1,6 +1,8 @@
+// Redux slice for managing contact form state, validation, and submission
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { submitContactForm } from '../thunks';
 
+// Contact form data type
 export interface ContactFormData {
   name: string;
   email: string;
@@ -8,6 +10,7 @@ export interface ContactFormData {
   message: string;
 }
 
+// Validation errors for contact form
 export interface FormErrors {
   name?: string;
   email?: string;
@@ -15,6 +18,7 @@ export interface FormErrors {
   message?: string;
 }
 
+// State shape for contact form feature
 export interface ContactState {
   formData: ContactFormData;
   errors: FormErrors;
@@ -24,6 +28,7 @@ export interface ContactState {
   submitCount: number;
 }
 
+// Initial state for contact form slice
 const initialState: ContactState = {
   formData: {
     name: '',

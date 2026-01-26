@@ -1,16 +1,23 @@
+
+
+
+
+
+// ContactForm component
+// Renders a contact form with validation, error/success messages, and accessibility features
 import { memo } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import type { ContactFormData, FormErrors } from '../../store/slices/contactSlice';
 import styles from '../../pages/Contact/Contact.module.css';
 
 interface ContactFormProps {
-  formData: ContactFormData;
-  errors: FormErrors;
-  loading: boolean;
-  success: boolean;
-  error: string | null;
-  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  onSubmit: (e: FormEvent) => void;
+  formData: ContactFormData; // Form field values
+  errors: FormErrors; // Validation errors
+  loading: boolean; // Loading state for submission
+  success: boolean; // Success state after submit
+  error: string | null; // Error message
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; // Input change handler
+  onSubmit: (e: FormEvent) => void; // Form submit handler
 }
 
 export const ContactForm = memo<ContactFormProps>(
@@ -22,14 +29,17 @@ export const ContactForm = memo<ContactFormProps>(
           For enquiries or project discussions, please use the contact form below.
         </p>
 
-        {success && <div className={styles.success}>✓ Thank you! Your message has been sent successfully.</div>}
+        {/* Success message */}
+        {success && <div className={styles.success}>&#10003; Thank you! Your message has been sent successfully.</div>}
 
+        {/* Error message */}
         {error && (
           <div className={styles.error} role="alert">
             {error}
           </div>
         )}
 
+        {/* Contact form */}
         <form
           onSubmit={onSubmit}
           className={styles.form}

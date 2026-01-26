@@ -1,19 +1,20 @@
+// Async thunks for Redux (side effects and async logic)
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import type { ContactFormData } from './slices/contactSlice';
 
-
 /**
- * Fetch projects from API or local JSON
- * Can be modified to fetch from actual backend
+ * Fetch projects from local JSON file (can be replaced with API call)
+ * Used to populate the projects state in the Redux store
  */
-
 export const fetchProjects = createAsyncThunk(
   'projects/fetchProjects',
   async (_, { rejectWithValue }) => {
     try {
+      // Dynamically import project data
       const projectsData = (await import('../data/projects.json')).default;
       return projectsData;
     } catch (error) {
+      // Return error message for rejected action
       return rejectWithValue(error instanceof Error ? error.message : 'Failed to fetch projects');
     }
   }
@@ -21,7 +22,8 @@ export const fetchProjects = createAsyncThunk(
 
 /**
  * Submit contact form
- * Handles form validation and submission
+ * Validates and (optionally) submits contact form data
+ * Returns errors if validation fails
  */
 export const submitContactForm = createAsyncThunk(
   'contact/submitForm',
@@ -46,15 +48,6 @@ export const submitContactForm = createAsyncThunk(
 
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // In a real app, replace with:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // });
-      // if (!response.ok) throw new Error('Failed to submit form');
-      // return response.json();
 
       return {
         success: true,

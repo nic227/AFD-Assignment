@@ -4,15 +4,16 @@ import { MemoryRouter } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 
 describe('Footer', () => {
-  it('renders the logo and description', () => {
+  it('renders the logo and updated description', () => {
     render(
       <MemoryRouter>
         <Footer />
       </MemoryRouter>
     );
     expect(screen.getAllByText('Nicole Grima').length).toBeGreaterThanOrEqual(1);
+    
     expect(
-      screen.getByText(/Full-stack developer passionate about creating/i)
+      screen.getByText(/MCAST Student -\s+passionate about creating beautiful and functional web experiences\./i)
     ).toBeInTheDocument();
   });
 

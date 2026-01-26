@@ -1,8 +1,9 @@
-
+// Redux slice for managing project data, filters, and loading state
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import { fetchProjects } from '../thunks';
 import projectsData from '../../data/projects.json';
 
+// Project type definition
 export interface Project {
   id: number;
   title: string;
@@ -12,6 +13,7 @@ export interface Project {
   link?: string;
 }
 
+// State shape for projects feature
 export interface ProjectsState {
   projects: Project[];
   selectedProject: Project | null;
@@ -20,6 +22,7 @@ export interface ProjectsState {
   error: string | null;
 }
 
+// Initial state for projects slice
 const initialState: ProjectsState = {
   projects: projectsData as Project[],
   selectedProject: null,
@@ -28,14 +31,17 @@ const initialState: ProjectsState = {
   error: null,
 };
 
+// Create the projects slice with reducers and async thunk handling
 const projectsSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {
+    // Set the list of projects
     setProjects: (state, action: PayloadAction<Project[]>) => {
       state.projects = action.payload;
       state.error = null;
     },
+    // Select a single project for details view
     selectProject: (state, action: PayloadAction<Project | null>) => {
       state.selectedProject = action.payload;
     },
