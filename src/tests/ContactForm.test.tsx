@@ -1,12 +1,18 @@
 import React from 'react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import { cleanup } from '@testing-library/react';
 
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import type { ContactFormData, FormErrors } from '../store/slices/contactSlice';
 
 describe('ContactForm', () => {
+
+    afterEach(() => {
+      cleanup();
+    });
   const baseFormData: ContactFormData = {
     name: '',
     email: '',
@@ -44,8 +50,6 @@ describe('ContactForm', () => {
   it('calls onChange when typing into inputs', async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
-
-    // We wrap to keep input controlled (so value updates in the DOM)
     function Wrapper() {
       const [formData, setFormData] = React.useState<ContactFormData>(baseFormData);
 
@@ -70,7 +74,10 @@ describe('ContactForm', () => {
 
     render(<Wrapper />);
 
-    const nameInput = screen.getByLabelText(/name/i) as HTMLInputElement;
+    // Ensure only one form/input is rendered
+    const nameInputs = screen.getAllByTestId('contact-name');
+    expect(nameInputs.length).toBe(1);
+    const nameInput = nameInputs[0] as HTMLInputElement;
 
     await user.type(nameInput, 'John');
 
@@ -87,7 +94,11 @@ describe('ContactForm', () => {
 
     renderForm({ onSubmit });
 
-    await user.click(screen.getByRole('button', { name: /send|submit/i }));
+    // Ensure only one form/button is rendered
+    const submitButtons = screen.getAllByTestId('contact-submit');
+    expect(submitButtons.length).toBe(1);
+    const submit = submitButtons[0];
+    await user.click(submit);
 
     expect(onSubmit).toHaveBeenCalledTimes(1);
   });
@@ -120,7 +131,10 @@ describe('ContactForm', () => {
   it('disables submit button and sets aria-busy when loading', () => {
     renderForm({ loading: true });
 
-    const submit = screen.getByRole('button', { name: /send|submit/i });
+    // Ensure only one form/button is rendered
+    const submitButtons = screen.getAllByTestId('contact-submit');
+    expect(submitButtons.length).toBe(1);
+    const submit = submitButtons[0];
     expect(submit).toBeDisabled();
 
     // aria-busy can be on form or a container depending on your implementation.

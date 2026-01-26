@@ -30,7 +30,12 @@ export const ContactForm = memo<ContactFormProps>(
           </div>
         )}
 
-        <form onSubmit={onSubmit} className={styles.form} noValidate>
+        <form
+          onSubmit={onSubmit}
+          className={styles.form}
+          noValidate
+          aria-busy={loading ? 'true' : undefined}
+        >
           <div className={styles.row}>
             <div className={styles.formGroup}>
               <label htmlFor="name" className={styles.label}>
@@ -47,6 +52,7 @@ export const ContactForm = memo<ContactFormProps>(
                 aria-describedby={errors.name ? 'name-error' : undefined}
                 aria-invalid={!!errors.name}
                 required
+                data-testid="contact-name"
               />
               {errors.name && (
                 <span className={styles.error} id="name-error">
@@ -129,6 +135,7 @@ export const ContactForm = memo<ContactFormProps>(
             disabled={loading}
             className={`${styles.button} ${loading ? styles.buttonDisabled : ''}`}
             aria-busy={loading}
+            data-testid="contact-submit"
           >
             {loading ? 'Sending...' : 'Send message'}
           </button>

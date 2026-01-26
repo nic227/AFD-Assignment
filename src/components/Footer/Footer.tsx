@@ -48,7 +48,7 @@ const Footer = memo(() => {
           <div className={styles.column}>
             <div className={styles.logo}>Nicole Grima</div>
             <p className={styles.description}>
-              Full-stack developer passionate about creating beautiful and functional web
+              MCAST Student -  passionate about creating beautiful and functional web
               experiences.
             </p>
             <div className={styles.socialContainer}>

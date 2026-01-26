@@ -1,17 +1,19 @@
 
 import { Link } from 'react-router-dom';
 import { useCallback, memo, useState } from 'react';
-import { useTheme } from '../../context/useTheme';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { toggleTheme } from '../../store/slices/themeSlice';
 import styles from './Navbar.module.css';
 
 
 const Navbar = memo(() => {
-  const { theme, toggleTheme } = useTheme();
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector((state) => state.theme.mode);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleToggleTheme = useCallback(() => {
-    toggleTheme();
-  }, [toggleTheme]);
+    dispatch(toggleTheme());
+  }, [dispatch]);
 
   const handleBurgerClick = () => setMenuOpen((open) => !open);
   const handleNavLinkClick = () => setMenuOpen(false);

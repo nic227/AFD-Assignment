@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1769395039949" clover="3.2.0">
+  <project timestamp="1769395039949" name="All files">
+    <metrics statements="148" coveredstatements="143" conditionals="90" coveredconditionals="76" methods="65" coveredmethods="64" elements="303" coveredelements="283" complexity="0" loc="148" ncloc="148" packages="16" files="24" classes="24"/>
+    <package name="components.ContactForm">
+      <metrics statements="3" coveredstatements="3" conditionals="34" coveredconditionals="28" methods="1" coveredmethods="1"/>
+      <file name="ContactForm.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\ContactForm\ContactForm.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="34" coveredconditionals="28" methods="1" coveredmethods="1"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
+        <line num="148" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ErrorBoundary">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+      <file name="ErrorBoundary.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\ErrorBoundary\ErrorBoundary.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ErrorBoundary.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\ErrorBoundary\ErrorBoundary.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="29" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="8" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="45" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Footer">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="Footer.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\Footer\Footer.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Footer.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\Footer\Footer.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="56" count="14" type="stmt"/>
+        <line num="72" count="28" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.HeroSection">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="HeroSection.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\HeroSection\HeroSection.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.LoadingSpinner">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="LoadingSpinner.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\LoadingSpinner\LoadingSpinner.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="LoadingSpinner.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\LoadingSpinner\LoadingSpinner.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Navbar">
+      <metrics statements="10" coveredstatements="10" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
+      <file name="Navbar.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\Navbar\Navbar.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Navbar.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\Navbar\Navbar.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="20" type="stmt"/>
+        <line num="11" count="35" type="stmt"/>
+        <line num="12" count="20" type="stmt"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="20" type="stmt"/>
+        <line num="19" count="20" type="stmt"/>
+        <line num="21" count="20" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ProjectCard">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="ProjectCard.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\ProjectCard\ProjectCard.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ProjectFilter">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="ProjectFilter.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\ProjectFilter\ProjectFilter.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.TechStack">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="TechStack.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\TechStack\TechStack.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="20" count="16" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ThemeEffects">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="ThemeEffects.tsx" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\components\ThemeEffects\ThemeEffects.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="data">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="projects.json" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\data\projects.json">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="pages.Contact">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Contact.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\pages\Contact\Contact.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="pages.Home">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="HomePage.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\pages\Home\HomePage.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="pages.Projects">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="ProjectsPage.module.css" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\pages\Projects\ProjectsPage.module.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="22" coveredstatements="17" conditionals="18" coveredconditionals="10" methods="4" coveredmethods="3"/>
+      <file name="hooks.ts" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\store\hooks.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="21" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+      </file>
+      <file name="store.ts" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\store\store.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="4" type="stmt"/>
+      </file>
+      <file name="thunks.ts" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\store\thunks.ts">
+        <metrics statements="19" coveredstatements="14" conditionals="18" coveredconditionals="10" methods="3" coveredmethods="2"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="33" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="64" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+    </package>
+    <package name="store.slices">
+      <metrics statements="69" coveredstatements="69" conditionals="20" coveredconditionals="20" methods="31" coveredmethods="31"/>
+      <file name="contactSlice.ts" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\store\slices\contactSlice.ts">
+        <metrics statements="35" coveredstatements="35" conditionals="8" coveredconditionals="8" methods="14" coveredmethods="14"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="41" count="6" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="88" count="6" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="103" count="5" type="stmt"/>
+        <line num="104" count="5" type="stmt"/>
+        <line num="105" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="108" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="125" count="6" type="stmt"/>
+      </file>
+      <file name="projectsSlice.ts" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\store\slices\projectsSlice.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="10"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="69" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="5" type="stmt"/>
+      </file>
+      <file name="themeSlice.ts" path="C:\Users\Nicole\Documents\GitHub\Nicole_Grima_CCD6.3A - AFD\portfolio\src\store\slices\themeSlice.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="38" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -4,12 +4,12 @@ import styles from '../../pages/Projects/ProjectsPage.module.css';
 
 interface ProjectCardProps {
   project: Project;
-  onLiveClick: (projectId: number) => void;
+  onLiveClick?: (projectId: number) => void;
 }
 
 export const ProjectCard = memo<ProjectCardProps>(({ project, onLiveClick }) => {
   const handleClick = useCallback(() => {
-    onLiveClick(project.id);
+    (onLiveClick ?? (() => {}))(project.id);
   }, [onLiveClick, project.id]);
 
   return (
@@ -25,13 +25,15 @@ export const ProjectCard = memo<ProjectCardProps>(({ project, onLiveClick }) => 
       </div>
 
       <div className={styles.projectFooter}>
-        <strong>{project.tech}</strong>
+        <div className={styles.techBadgeWrapper}>
+          <span className={styles.techBadge}>{project.tech}</span>
+        </div>
         <button
           onClick={handleClick}
           className={styles.liveButton}
-          aria-label={`View ${project.title} live project`}
+          aria-label={`View ${project.title} details`}
         >
-          Live
+          Details
         </button>
       </div>
     </article>

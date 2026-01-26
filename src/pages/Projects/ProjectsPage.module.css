@@ -1,3 +1,17 @@
+/* Wrapper to center the badge */
+.techBadgeWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Ensures the badge is always centered and compact */
+.techBadgeWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -156,16 +170,23 @@
 }
 
 .techBadge {
-  padding: 0.75rem 2rem;
+  padding: 0.2rem 0.7rem;
   background-color: #f97316;
   color: #ffffff;
-  border-radius: 0;
-  font-size: 1rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
+
 
 .techBadge:hover {
   transform: none;
@@ -228,6 +249,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* (reverted) */
   .container {
     padding: 3rem 1.5rem;
     padding-top: 100px;
@@ -261,7 +283,6 @@
     padding: 1.25rem 1.5rem;
   }
 
-  .techBadge,
   .liveButton {
     width: 100%;
     text-align: center;
@@ -299,10 +320,7 @@
     padding: 1rem;
   }
 
-  .techBadge {
-    padding: 0.625rem 1.5rem;
-    font-size: 0.9375rem;
-  }
+  /* (reverted) */
 
   .liveButton {
     padding: 0.625rem 2rem;

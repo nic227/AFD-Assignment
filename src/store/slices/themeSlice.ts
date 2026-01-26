@@ -1,18 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+export type ThemeMode = 'light' | 'dark';
+
 export interface ThemeState {
-  mode: 'light' | 'dark';
+  mode: ThemeMode;
   fontSize: 'small' | 'medium' | 'large';
   highContrast: boolean;
   reducedMotion: boolean;
 }
 
+
+// Helper to safely get initial theme from localStorage
+export const getInitialMode = (): ThemeMode => {
+  if (typeof window === 'undefined') return 'dark';
+  const saved = localStorage.getItem('theme') as ThemeMode | null;
+  return saved === 'light' || saved === 'dark' ? saved : 'dark';
+};
+
+export const getInitialReducedMotion = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+};
+
 const initialState: ThemeState = {
-  mode: (localStorage.getItem('theme') as 'light' | 'dark') || 'dark',
+  mode: getInitialMode(),
   fontSize: 'medium',
   highContrast: false,
-  reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  reducedMotion: getInitialReducedMotion(),
 };
 
 const themeSlice = createSlice({
@@ -21,21 +36,15 @@ const themeSlice = createSlice({
   reducers: {
     toggleTheme: (state) => {
       state.mode = state.mode === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', state.mode);
-      document.documentElement.setAttribute('data-theme', state.mode);
     },
-    setTheme: (state, action: PayloadAction<'light' | 'dark'>) => {
+    setTheme: (state, action: PayloadAction<ThemeMode>) => {
       state.mode = action.payload;
-      localStorage.setItem('theme', state.mode);
-      document.documentElement.setAttribute('data-theme', state.mode);
     },
     setFontSize: (state, action: PayloadAction<'small' | 'medium' | 'large'>) => {
       state.fontSize = action.payload;
-      localStorage.setItem('fontSize', state.fontSize);
     },
     toggleHighContrast: (state) => {
       state.highContrast = !state.highContrast;
-      localStorage.setItem('highContrast', JSON.stringify(state.highContrast));
     },
     setReducedMotion: (state, action: PayloadAction<boolean>) => {
       state.reducedMotion = action.payload;

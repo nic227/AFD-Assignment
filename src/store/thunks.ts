@@ -1,16 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import type { ContactFormData } from './slices/contactSlice';
-import projectsData from '../data/projects.json';
+
 
 /**
  * Fetch projects from API or local JSON
  * Can be modified to fetch from actual backend
  */
+
 export const fetchProjects = createAsyncThunk(
   'projects/fetchProjects',
   async (_, { rejectWithValue }) => {
     try {
-
+      const projectsData = (await import('../data/projects.json')).default;
       return projectsData;
     } catch (error) {
       return rejectWithValue(error instanceof Error ? error.message : 'Failed to fetch projects');
