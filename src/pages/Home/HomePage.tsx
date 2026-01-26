@@ -22,22 +22,22 @@ const Portfolio = () => {
   // List of technologies for the tech stack section
   const techStack = useMemo(
     () => [
-      { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" /> },
-      { name: 'CSS3', icon: <img className={styles.techIconImage} src={cssIcon} alt="CSS3" /> },
-      { name: 'React', icon: <img className={styles.techIconImage} src={reactIcon} alt="React" /> },
+      { name: 'HTML5', icon: <img className={styles.techIconImage} src={html5Icon} alt="HTML5" width={32} height={32} loading="lazy" /> },
+      { name: 'CSS3', icon: <img className={styles.techIconImage} src={cssIcon} alt="CSS3" width={32} height={32} loading="lazy" /> },
+      { name: 'React', icon: <img className={styles.techIconImage} src={reactIcon} alt="React" width={32} height={32} loading="lazy" /> },
       {
         name: 'Node.js',
-        icon: <img className={styles.techIconImage} src={nodeIcon} alt="Node.js" />,
+        icon: <img className={styles.techIconImage} src={nodeIcon} alt="Node.js" width={32} height={32} loading="lazy" />,
       },
-      { name: 'Vue', icon: <img className={styles.techIconImage} src={vueIcon} alt="Vue" /> },
-      { name: 'Git', icon: <img className={styles.techIconImage} src={gitIcon} alt="Git" /> },
+      { name: 'Vue', icon: <img className={styles.techIconImage} src={vueIcon} alt="Vue" width={32} height={32} loading="lazy" /> },
+      { name: 'Git', icon: <img className={styles.techIconImage} src={gitIcon} alt="Git" width={32} height={32} loading="lazy" /> },
       {
         name: 'GitHub',
-        icon: <img className={styles.techIconImage} src={githubIcon} alt="GitHub" />,
+        icon: <img className={styles.techIconImage} src={githubIcon} alt="GitHub" width={32} height={32} loading="lazy" />,
       },
       {
         name: 'Next.js',
-        icon: <img className={styles.techIconImage} src={nextIcon} alt="Next.js" />,
+        icon: <img className={styles.techIconImage} src={nextIcon} alt="Next.js" width={32} height={32} loading="lazy" />,
       },
     ],
     []
